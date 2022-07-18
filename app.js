@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -17,7 +18,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 // register view engine
 app.set('view engine', 'ejs');
 app.set('views', 'pages');
-
 
 // middleware & static files (like css file)
 app.use(morgan('dev'));
