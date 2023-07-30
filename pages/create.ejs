@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./template/head.ejs') %> 
-<body>
-    <%- include('./template/nav.ejs') %> 
+  <%- include('./template/head.ejs') %>
+  <body>
+    <%- include('./template/nav.ejs') %>
 
     <div class="create-blog content">
-        <form action="/blogs" method="POST">
-            <label for="title">Mau Dipanggil Apa:</label>
-            <input type="text" id="title" name="title">
-            <label for="snippet">Tentang Apa Nih:</label>
-            <input type="text" id="snippet" name="snippet" required>
-            <label for="body">Ceritain Lagi Dong:</label>
-            <textarea id="body" name="body" required></textarea>
-            <button>Post</button>
-        </form>
+      <form action="/blogs" method="POST">
+        <label for="title">Mau Dipanggil Apa:</label>
+        <input type="text" id="title" name="title" />
+        <label for="snippet">Tentang Apa Nih:</label>
+        <input type="text" id="snippet" name="snippet" required />
+        <label for="body">Ceritain Lagi Dong:</label>
+        <textarea id="body" name="body" required></textarea>
+        <button>Post</button>
+      </form>
     </div>
-    
-    <%- include('./template/footer.ejs') %> 
-</body>
+
+    <%- include('./template/footer.ejs') %>
+  </body>
 </html>

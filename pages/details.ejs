@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./template/head.ejs') %> 
-<body>
-    <%- include('./template/nav.ejs') %> 
+  <%- include('./template/head.ejs') %>
+  <body>
+    <%- include('./template/nav.ejs') %>
 
     <div class="details content">
-        <h2><%= blog.title  %> </h2>
-        <div class="content">
-            <p><%= blog.body %> </p>
-        </div>
-        <a class="delete" data-doc="<%= blog._id %>">
-            <img src="/bin-with-lid.png" alt="delete-icon">
-        </a>
+      <h2><%= blog.title %></h2>
+      <div class="content">
+        <p><%= blog.body %></p>
+      </div>
+      <a class="delete" data-doc="<%= blog._id %>">
+        <img src="/bin-with-lid.png" alt="delete-icon" />
+      </a>
     </div>
 
-    <%- include('./template/footer.ejs') %> 
+    <%- include('./template/footer.ejs') %>
 
     <script>
-        const trashcan = document.querySelector('a.delete');
-        trashcan.addEventListener('click', (e) => {
-            const endpoint = `/blogs/${trashcan.dataset.doc}`;
+      const trashcan = document.querySelector("a.delete");
+      trashcan.addEventListener("click", (e) => {
+        const endpoint = `/blogs/${trashcan.dataset.doc}`;
 
-            fetch(endpoint, {
-                method: 'DELETE'
-            })
-            .then((response) => response.json())
-            .then((data) => window.location.href = data.redirect)
-            .catch((err) => {
-                console.log(err);
-            })
-        });
+        fetch(endpoint, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => (window.location.href = data.redirect))
+          .catch((err) => {
+            console.log(err);
+          });
+      });
     </script>
-
-</body>
+  </body>
 </html>
